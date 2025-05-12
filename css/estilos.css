@@ -1,20 +1,144 @@
 /* estilos.css - Estilos base para Dulce Sabor */
 
-body {
-    background-color: #fff8f0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Aplicando reglas universales */
+*{
     margin: 0;
     padding: 0;
-    color: #4b2e2e;
+    box-sizing: border-box;
+}
+/* Estilos generales del sitio */
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #dcfbf683;
+    color: #2ec4b0;
+}
+/* Definir el estilo del encabezado */
+header{
+    background-color: #2ec4b054;
+    padding: 20px;
+    text-align: centeR;
+}
+.logo{
+    width: 100px;
+}
+/* ecf3c1 */
+/* Estilos del navegador */
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+/* Estilos de los items de la lista */
+nav ul li{
+    margin: 0 15px;
+}
+/* Estilos a los enlaces del navegador */
+nav ul li a{
+    color:white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.container {
-    width: 900px;
+nav ul li a:hover{
+    text-decoration: underline;
+    color: #ecf3c1;
+}
+
+/* Estilos añ area principal */
+main{
+    padding: 30px;
+    text-align: center;
+}
+
+/* Estilos a la sección */
+section{
+    margin-bottom: 40px;
+    padding: 20px;
+    background: rgb(255, 255, 255);
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgb(147, 223, 223);
+}
+
+/* Pie de pagina */
+footer{
+    background-color: #2ec4b054;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Estilo de imagenes */
+img{
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+.img_tarjeta{
+    width: 30%;
+}
+/* Estilos de las tarjetas de servicios */
+.tarjetas{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+/* Estilos a cada tarjeta */
+.tarjeta{
+    background-color: #2ec4b023;
+    padding: 20px;
+    border: 2px solid #2ec4b0;
+    border-radius: 15px;
+    width: 30%;
+    margin: 10px;
+    box-shadow: 0px 2px 6px rgba(147, 223, 223);
+}
+
+/* Diseño responsivo */
+@media(max-width: 768px){
+    /* Cambiar la orientacion a columnas del menu*/
+    nav ul{
+        flex-direction: column;
+    }
+    /* Ajustar los márgenes superiores entre cada menú */
+    nav ul li{
+        margin: 10px 0;
+    }
+    /* Colocando las tarjetas una debajo de otra */
+    .tarjetas{
+        flex-direction: column;
+        align-items: center;
+    }
+    /* Cada tarjeta ocupa el 80% del espacio disponible */
+    .tarjeta{
+        width: 80%;
+    }
+}
+
+.btn-plan {
+    background-color: #2ec4b0; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-plan:hover {
+    background-color: #e67d7d; 
+  }
+
+.contenedor-plan {
+    max-width: 800px;
     margin: 0 auto;
+    padding: 30px;
+    text-align: center;
 }
 
-header, footer {
-    background-color: #f4d3c2;
-    padding: 1em;
-    margin-bottom: 1em;
-}
+  
