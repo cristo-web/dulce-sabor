@@ -8,9 +8,7 @@
   </head>
   <body>
     <header>
-      <!-- Barra de navegación -->
       <h1>Formulario de Contacto</h1>
-      <br />
       <nav>
         <a href="index.html" class="btn-plan">Inicio</a>
         <a href="tienda.html" class="btn-plan">Tienda</a>
@@ -20,54 +18,42 @@
 
     <main>
       <form action="#" method="post">
-        <!-- Nombre -->
-        <fieldset>
-          <legend><strong>Datos Personales</strong></legend>
-          <br>
-          <label for="nombre">Nombre Completo:</label>
-          <input
-            type="text"
-            id="nombre"
-            name="nombre"
-            placeholder="Ingrese su nombre"
-            required
-          />
-          <br /><br />
+        <h1>Formulario de Contacto</h1>
+        <label for="nombre">Nombre Completo:</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          placeholder="Ingrese su nombre"
+          required
+        />
 
-          <!-- Email -->
-          <label for="correo">Correo Electrónico:</label>
-          <input
-            type="email"
-            id="correo"
-            name="correo"
-            placeholder="Ingresa tu correo"
-            required
-          />
-          <br /><br />
+        <label for="correo">Correo Electrónico:</label>
+        <input
+          type="email"
+          id="correo"
+          name="correo"
+          placeholder="Ingresa tu correo"
+          required
+        />
 
-          <!-- Tipo de pastel (select) -->
-          <label for="tipo_pastel">Tipo de Pastel:</label>
-          <select id="tipo_pastel" name="tipo_pastel" required>
-            <option value="chocolate">Chocolate</option>
-            <option value="vainilla">Vainilla</option>
-            <option value="frutal">Frutal</option>
-            <option value="fresa">Fresa</option>
-          </select>
-          <br /><br />
+        <label for="tipo_pastel">Tipo de Pastel:</label>
+        <select id="tipo_pastel" name="tipo_pastel" required>
+          <option value="chocolate">Chocolate</option>
+          <option value="vainilla">Vainilla</option>
+          <option value="frutal">Frutal</option>
+          <option value="fresa">Fresa</option>
+        </select>
 
-          <!-- Comentarios (textarea) -->
-          <label for="comentarios">Comentarios:</label><br />
-          <textarea
-            id="comentarios"
-            name="comentarios"
-            rows="4"
-            cols="50"
-            placeholder="Déjanos tus comentarios"
-          ></textarea>
-          <br /><br />
+        <label for="comentarios">Comentarios:</label>
+        <textarea
+          id="comentarios"
+          name="comentarios"
+          rows="4"
+          placeholder="Déjanos tus comentarios"
+        ></textarea>
 
-          <!-- Aceptación de términos (checkbox) -->
-          <label for="aceptacion">Acepto los términos y condiciones:</label>
+        <label for="aceptacion">
           <input
             type="checkbox"
             id="aceptacion"
@@ -75,16 +61,16 @@
             value="si"
             required
           />
-          <br /><br />
+          Acepto los términos y condiciones
+        </label>
 
-          <button type="submit" class="btn-plan">Enviar</button>
-          <button type="reset" class="btn-plan">Restablecer</button>
-          <br><br>
-        </fieldset>
+        <button type="submit" class="btn-plan">Enviar</button>
+        <button type="reset" class="btn-plan">Restablecer</button>
       </form>
     </main>
+
     <footer>
-        <p>Visítanos y endulza tu día 🍰 © 2025 Dulce Sabor</p>
+      <p>Visítanos y endulza tu día 🍰 © 2025 Dulce Sabor</p>
     </footer>
   </body>
 </html>
