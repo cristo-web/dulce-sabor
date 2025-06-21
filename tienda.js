@@ -74,6 +74,21 @@ document.addEventListener('DOMContentLoaded', () => {
       </button>`;
       listaCarrito.appendChild(li);
     });
+     // Calcular totales
+    const contenedorTotales = document.querySelector('.totales');
+    const subtotal = carrito.reduce((acc, item) => acc + item.precioTotal, 0);
+    const iva = subtotal * 0.15;
+    const total = subtotal + iva;
+
+    // Mostrar totales
+    contenedorTotales.innerHTML = carrito.length > 0
+    ? `
+    <hr style="margin-top: 10px; margin-bottom: 10px;">
+    <p><strong>Subtotal:</strong> $${subtotal.toFixed(2)}</p>
+    <p><strong>IVA (15%):</strong> $${iva.toFixed(2)}</p>
+    <p><strong>Total:</strong> <span style="color: green; font-size: 1.2em;">$${total.toFixed(2)}</span></p>
+    `
+    : ''; // Si el carrito está vacío, limpiar los totales
   }
 });
 
