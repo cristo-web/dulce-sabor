@@ -7,21 +7,53 @@ document.addEventListener("DOMContentLoaded", () => {
     // Obtener los datos del formulario
     const nombre = formulario.nombre.value;
     const correo = formulario.correo.value;
-    const tipo_pastel = formulario.tipo_pastel.value;
+    const tipoPastel = formulario.tipo_pastel.value;
     const comentarios = formulario.comentarios.value;
 
-    emailjs.sendForm('service_8scpuva', 'template_3zztkpm', this)
-      .then(() => {
-        mostrarToastExito(nombre, correo, tipo_pastel, comentarios);
-        formulario.reset();
-      })
-      .catch((error) => {
-        console.error("❌ Error al enviar:", error);
-        mostrarToastError();
-      });
+    mostrarToastConfirmacion(nombre, correo, tipoPastel, comentarios);
   });
 
-  function mostrarToastExito() {
+  // 🔄 NUEVO: Confirmación antes del envío
+  function mostrarToastConfirmacion(nombre, correo, tipoPastel, comentarios) {
+    const toast = document.createElement('div');
+    toast.className = 'toast-exito';
+    toast.innerHTML = `
+      <div class="toast-body">
+        <h3>📋 Confirmar información</h3>
+        <p><strong>Nombre:</strong> ${nombre}</p>
+        <p><strong>Correo:</strong> ${correo}</p>
+        <p><strong>Pastel elegido:</strong> ${tipoPastel}</p>
+        <p><strong>Comentario:</strong> ${comentarios || 'Sin comentarios'}</p>
+        <p>¿Esta información es correcta?</p>
+        <button class="btn-toast-aceptar">Aceptar</button>
+        <button class="btn-toast-cancelar">Cancelar</button>
+      </div>
+    `;
+    document.body.appendChild(toast);
+
+    // Si el usuario ACEPTA → enviar
+    toast.querySelector('.btn-toast-aceptar').addEventListener('click', () => {
+      // Enviar usando EmailJS
+      emailjs.sendForm('service_8scpuva', 'template_3zztkpm', formulario)
+        .then(() => {
+          toast.remove();
+          mostrarToastExito(nombre, correo, tipoPastel, comentarios);
+          formulario.reset();
+        })
+        .catch((error) => {
+          toast.remove();
+          console.error("❌ Error al enviar:", error);
+          mostrarToastError();
+        });
+    });
+
+    // Si el usuario CANCELA → no se envía
+    toast.querySelector('.btn-toast-cancelar').addEventListener('click', () => {
+      toast.remove();
+    });
+  }
+
+  function mostrarToastExito(nombre, correo, tipoPastel, comentarios) {
   const toast = document.createElement('div');
   toast.className = 'toast-exito';
   toast.innerHTML = `
